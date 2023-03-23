@@ -1,36 +1,46 @@
 import { Application, Request, Response } from 'express';
 import { authValidator } from '../config/tokenValidator';
-import { TodoController } from '../controllers/userController/todoController/todo.controller';
+import { PostController } from '../controllers/postControler/post.controller';
 
 export class PostRoutes {
 
-    private todo: TodoController = new TodoController();
+    private post: PostController = new PostController();
 
     public route(api:string, app: Application) {
 
         // to create todo
         app.post(api + '/', authValidator, (req: Request, res: Response) => {
-            this.todo.createTodo(req, res);
+            this.post.createPost(req, res);
+        });
+
+        // to add comment on post
+        app.post(api + '/comment/:id', authValidator, (req: Request, res: Response) => {
+            this.post.addComment(req, res);
+        });
+
+        // to add comment on post
+        app.get(api + '/comment/:postId', authValidator, (req: Request, res: Response) => {
+            this.post.getCommentOfPost(req, res);
         });
 
         // to get all todo
         app.get(api + '/', authValidator, (req: Request, res: Response) => {
-            this.todo.getAllTodo(req, res);
+            this.post.getAllPost(req, res);
         });
 
         // to get todo by id
         app.get(api + '/self', authValidator, (req: Request, res: Response) => {
-            this.todo.getTodoByID(req, res);
+            this.post.getPostByID(req, res);
         });
 
         // to update todo
         app.put(api + '/:id', authValidator, (req: Request, res: Response) => {
-            this.todo.updateTodo(req, res);
+            this.post.updatePost(req, res);
         });
 
         // to delete todo
         app.delete(api + '/:id', authValidator, (req: Request, res: Response) => {
-            this.todo.deleteTodo(req, res);
+            this.post.deletePost(req, res);
         });
 
     }

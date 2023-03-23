@@ -12,22 +12,22 @@ export class TodoService {
     }
 
     // to get all user
-    public async getAllTodo() {
+    public async getAllTodo(skip, limit) {
         let query = {is_deleted: false}
-        let result = await findAllTodo(query)
+        let result = await findAllTodo(query, skip, limit)
         return result;
     }
 
     // to get user by id
-    public async getTodoByUserID(userId) {
+    public async getTodoByUserID(userId, skip, limit) {
         let query = {user: userId}
-        let result = await findAllTodo(query)
+        let result = await findAllTodo(query, skip, limit)
         return result;
     }
 
     // to get user by id
-    public async getAllTodoById(id) {
-        let query = {_id: id, is_deleted: false}
+    public async getAllTodoById(id, userId) {
+        let query = {_id: id, user: userId, is_deleted: false}
         let result = await getTodoById(query)
         return result;
     }

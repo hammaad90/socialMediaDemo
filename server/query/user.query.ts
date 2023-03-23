@@ -13,8 +13,8 @@ export async function getUser(query) {
 }
 
 // query to get all user
-export async function findAllUser(query) {
-    let user = await users.find(query);
+export async function findAllUser(query, skip, limit) {
+    let user = await users.find(query).skip(skip).limit(limit).sort('createdAt');
     return user ? user : null;
 }
 

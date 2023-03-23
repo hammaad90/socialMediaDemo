@@ -107,7 +107,7 @@ export class UserController {
   // to get all user 
   public async getAllUser(req: Request, res: Response) {
     try {
-      let allUser = await this.user_service.getAllUser();
+      let allUser = await this.user_service.getAllUser(Number(req.query.skip), Number(req.query.limit));
       return res
         .status(httpStatus.OK)
         .send({ allUser })

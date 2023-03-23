@@ -7,8 +7,8 @@ export async function saveTodo(data) {
 }
 
 // query to get all user
-export async function findAllTodo(query) {
-    let result = await todo.find(query).populate('user', '_id firstName lastName role')
+export async function findAllTodo(query, skip, limit) {
+    let result = await todo.find(query).populate('user', '_id firstName lastName role').skip(skip).limit(limit).sort('createdAt')
     return result ? result : null;
 }
 

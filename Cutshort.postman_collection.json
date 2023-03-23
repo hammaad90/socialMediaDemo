@@ -1,0 +1,547 @@
+{
+	"info": {
+		"_postman_id": "6fabc313-f1cd-4980-96ff-cddad3cca917",
+		"name": "Cutshort",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1336194"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWI1NjA3YjFmMWFmMWUyY2UxOTZmYSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY3OTUxMzEwMSwiZXhwIjoxNjc5NTk5NTAxfQ.qP76QsXUzLRiqR0qM4c5o3CwxjHLgvhPqDGbUf4i_aY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Test\",\n    \"lastName\": \"Test2\",\n    \"email\": \"test@gmail.com\",\n    \"phoneNumber\": \"123456789\",\n    \"password\": \"123456789\",\n    \"gender\": \"F\",\n    \"role\": \"USER\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/api/user/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"mohammad.hammaad@gmail.com\",\n    \"password\": \"123456789\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/api/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all user",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWI1NjA3YjFmMWFmMWUyY2UxOTZmYSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY3OTUxMzEwMSwiZXhwIjoxNjc5NTk5NTAxfQ.qP76QsXUzLRiqR0qM4c5o3CwxjHLgvhPqDGbUf4i_aY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3333/api/user?skip=0&limit=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"user"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Todo",
+			"item": [
+				{
+					"name": "get Todo of all user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWI1NjFkYjFmMWFmMWUyY2UxOTZmYiIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNjc5NTUxNTIyLCJleHAiOjE2Nzk2Mzc5MjJ9.0oxn8bvjUh2INJiv5aFpHZAZTtTk8l77s7cdai9hkwQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3333/api/to-do?skip=0&limit=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"to-do"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Todo of user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWI1NjFkYjFmMWFmMWUyY2UxOTZmYiIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNjc5NTUzMzEyLCJleHAiOjE2Nzk2Mzk3MTJ9.lbGdA2dWcQBtjvdo0a7TpyqJcKEQSwnOPDnsi69dqTI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3333/api/to-do/self?skip=0&limit=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"to-do",
+								"self"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update todo and mark as complete",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWI1NjFkYjFmMWFmMWUyY2UxOTZmYiIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNjc5NTUzMzEyLCJleHAiOjE2Nzk2Mzk3MTJ9.lbGdA2dWcQBtjvdo0a7TpyqJcKEQSwnOPDnsi69dqTI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"COMPLETE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/api/to-do/641bec728d9baa0a8575e848",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"to-do",
+								"641bec728d9baa0a8575e848"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete todo of user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWI1NjFkYjFmMWFmMWUyY2UxOTZmYiIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNjc5NTUzMzEyLCJleHAiOjE2Nzk2Mzk3MTJ9.lbGdA2dWcQBtjvdo0a7TpyqJcKEQSwnOPDnsi69dqTI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3333/api/to-do/641bec6b8d9baa0a8575e847",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"to-do",
+								"641bec6b8d9baa0a8575e847"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create todo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWJmMWNmODAxOGFhMGI5ZWRkZGMxZiIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNjc5NTUyOTkyLCJleHAiOjE2Nzk2MzkzOTJ9.MFIwqSMpZVmelihD7ihm-WGJvj_Jh5TOECp84zK2RG8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"todo\": \"my first to do 2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/api/to-do",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"to-do"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "get post of all user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWI1NjFkYjFmMWFmMWUyY2UxOTZmYiIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNjc5NTUxNTIyLCJleHAiOjE2Nzk2Mzc5MjJ9.0oxn8bvjUh2INJiv5aFpHZAZTtTk8l77s7cdai9hkwQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3333/api/post?skip=0&limit=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"post"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get post of user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWI1NjFkYjFmMWFmMWUyY2UxOTZmYiIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNjc5NTUzMzEyLCJleHAiOjE2Nzk2Mzk3MTJ9.lbGdA2dWcQBtjvdo0a7TpyqJcKEQSwnOPDnsi69dqTI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3333/api/post/self?skip=0&limit=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"post",
+								"self"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update post",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWI1NjFkYjFmMWFmMWUyY2UxOTZmYiIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNjc5NTUzMzEyLCJleHAiOjE2Nzk2Mzk3MTJ9.lbGdA2dWcQBtjvdo0a7TpyqJcKEQSwnOPDnsi69dqTI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"post\": \"Upadted my first post\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/api/post/641c327109b555190bf46d63",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"post",
+								"641c327109b555190bf46d63"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete post of user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWI1NjFkYjFmMWFmMWUyY2UxOTZmYiIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNjc5NTUzMzEyLCJleHAiOjE2Nzk2Mzk3MTJ9.lbGdA2dWcQBtjvdo0a7TpyqJcKEQSwnOPDnsi69dqTI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3333/api/post/641bec6b8d9baa0a8575e847",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"post",
+								"641bec6b8d9baa0a8575e847"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWI1NjFkYjFmMWFmMWUyY2UxOTZmYiIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNjc5NTUzMzEyLCJleHAiOjE2Nzk2Mzk3MTJ9.lbGdA2dWcQBtjvdo0a7TpyqJcKEQSwnOPDnsi69dqTI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"post\": \"This is my Second post from new user\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/api/post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create comment on post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWJmMWNmODAxOGFhMGI5ZWRkZGMxZiIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNjc5NTUyOTkyLCJleHAiOjE2Nzk2MzkzOTJ9.MFIwqSMpZVmelihD7ihm-WGJvj_Jh5TOECp84zK2RG8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"comment\": \"my third comment on post\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3333/api/post/comment/641c327109b555190bf46d63",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"post",
+								"comment",
+								"641c327109b555190bf46d63"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get comment on post",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWJmMWNmODAxOGFhMGI5ZWRkZGMxZiIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNjc5NTUyOTkyLCJleHAiOjE2Nzk2MzkzOTJ9.MFIwqSMpZVmelihD7ihm-WGJvj_Jh5TOECp84zK2RG8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3333/api/post/comment/641c327109b555190bf46d63?skip=0&limit=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"api",
+								"post",
+								"comment",
+								"641c327109b555190bf46d63"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,6 +1,6 @@
 import { Application, Request, Response } from 'express';
 import { authValidator } from '../config/tokenValidator';
-import { TodoController } from '../controllers/userController/todoController/todo.controller';
+import { TodoController } from '../controllers/todoController/todo.controller';
 
 export class TodoRoutes {
 

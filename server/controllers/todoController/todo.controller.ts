@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { TodoService } from '../../../service/todo.service';
+import { TodoService } from '../../service/todo.service';
 import { todopayload, updateTodopayload } from '../todoController/todoPayload';
 import * as Joi from 'joi';
 import * as httpStatus from 'http-status'
@@ -51,7 +51,7 @@ export class TodoController {
   // to get all user 
   public async getAllTodo(req: Request, res: Response) {
     try {
-      let alltodo = await this.todoService.getAllTodo();
+      let alltodo = await this.todoService.getAllTodo(Number(req.query.skip), Number(req.query.limit));
       return res
         .status(httpStatus.OK)
         .send({ alltodo })
@@ -65,7 +65,7 @@ export class TodoController {
   // to get all user 
   public async getTodoByID(req: Request, res: Response) {
     try {
-      let alltodo = await this.todoService.getTodoByUserID(req['decoded'].id);
+      let alltodo = await this.todoService.getTodoByUserID(req['decoded'].id, Number(req.query.skip), Number(req.query.limit));
       return res
         .status(httpStatus.OK)
         .send({ alltodo })
@@ -93,7 +93,7 @@ export class TodoController {
           error: error.message
         });
     }
-    const exists = await this.todoService.getAllTodoById(req.params.id)
+    const exists = await this.todoService.getAllTodoById(req.params.id, req['decoded'].id)
     if (exists) {
       try {
 
@@ -118,7 +118,7 @@ export class TodoController {
   public async deleteTodo(req: Request, res: Response) {
     const user = req['decoded'].role
     if (user == 'USER') {
-      const exists = await this.todoService.getAllTodoById(req.params.id)
+      const exists = await this.todoService.getAllTodoById(req.params.id, req['decoded'].id)
       if (exists) {
         try {
           let user = await this.todoService.deleteTodoById(req.params.id, req['decoded'].id);

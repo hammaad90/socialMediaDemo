@@ -51,9 +51,9 @@ export default class UserService {
     }
 
     // to get all user
-    public async getAllUser() {
+    public async getAllUser(skip, limit) {
         let query = {}
-        let user = await findAllUser(query)
+        let user = await findAllUser(query, skip, limit)
         return user;
     }
 
